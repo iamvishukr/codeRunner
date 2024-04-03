@@ -1,8 +1,33 @@
+import { useState } from "react";
+import Editor from "./components/Editor";
+
 function App() {
+  const [html, setHtml] = useState("");
+  const [css, setCss] = useState("");
+  const [javascript, setJavascript] = useState("");
   return (
     <>
-      <div className="top-panel"></div>
-      <div className="bottom-panel">
+      <div className="pane top-panel">
+        <Editor
+          language="xml"
+          displayName="HTML"
+          value={html}
+          onChange={setHtml}
+        />
+        <Editor
+          language="CSS"
+          displayName="CSS"
+          value={css}
+          onChange={setCss}
+        />
+        <Editor
+          language="javascript"
+          displayName="JS"
+          value={javascript}
+          onChange={setJavascript}
+        />
+      </div>
+      <div className="pane">
         <iframe
           title="output"
           sandbox="allow-script"
