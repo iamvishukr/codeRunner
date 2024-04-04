@@ -8,7 +8,7 @@ body {
 
 .pane{
   display: flex;
-  height: 100vh;
+  height: 80vh;
 }
 
 .editor-container{

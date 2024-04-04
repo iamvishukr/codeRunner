@@ -4,3 +4,6 @@
 3. installed codeMirror and react-codeMirror2 dependencies
 4. created component folder
 5. created Editor file inside Component folder
+6. Styled Editor
+7. created html,css and javascript file (ide)
+8.

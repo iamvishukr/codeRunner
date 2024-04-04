@@ -1,13 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Editor from "./components/Editor";
 
 function App() {
   const [html, setHtml] = useState("");
   const [css, setCss] = useState("");
-  const [javascript, setJavascript] = useState("");
+  const [js, setJs] = useState("");
+  const [srcDoc, setSrcDoc] = useState("");
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setSrcDoc(`
+        <html>
+          <body>${html}</body>
+          <style>${css}</style>
+          <script>${js}</script>
+        </html>
+      `)
+    }, 250)
+
+    return () => clearTimeout(timeout)
+  }, [html, css, js])
+
   return (
     <>
-      <div className="pane top-panel">
+      <div className="pane top-pane">
         <Editor
           language="xml"
           displayName="HTML"
@@ -15,7 +31,7 @@ function App() {
           onChange={setHtml}
         />
         <Editor
-          language="CSS"
+          language="css"
           displayName="CSS"
           value={css}
           onChange={setCss}
@@ -23,21 +39,21 @@ function App() {
         <Editor
           language="javascript"
           displayName="JS"
-          value={javascript}
-          onChange={setJavascript}
+          value={js}
+          onChange={setJs}
         />
       </div>
       <div className="pane">
         <iframe
+          srcDoc={srcDoc}
           title="output"
-          sandbox="allow-script"
+          sandbox="allow-scripts"
           width="100%"
           height="100%"
-          frameborder="0"
-        ></iframe>
+        />
       </div>
     </>
-  );
+  )
 }
 
 export default App;
