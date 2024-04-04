@@ -6,4 +6,5 @@
 5. created Editor file inside Component folder
 6. Styled Editor
 7. created html,css and javascript file (ide)
-8.
+8. using font awesome icons
+9. creating custom hook for local storage.
