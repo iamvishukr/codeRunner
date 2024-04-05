@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-      <div className="pane top-pane">
+      <div className="pane top-pane ">
         <Editor
           language="xml"
           displayName="HTML"
@@ -50,6 +50,7 @@ function App() {
           sandbox="allow-scripts"
           width="100%"
           height="100%"
+          displayName="output"
         />
       </div>
     </>

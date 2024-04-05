@@ -1,9 +1,16 @@
 body {
   margin: 0;
+  background-color: rgba(207, 203, 203, 0.642);
 }
 
 .top-panel{
   background-color: hsl(240, 6%, 26%);
+}
+.top{
+  text-align: center;
+  color: rgb(20, 18, 18);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-top: 6px;
 }
 
 .pane{
@@ -18,9 +25,18 @@ body {
   flex-direction: column;
   padding: .5rem;
   background-color: hsl(240, 6%, 26%);
+  margin-left: 2px;
+  margin-right: 2px;
+  font-size: larger;
 }
 .editor-container.collapsed{
   flex-grow: 0;
+}
+.output-head{
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .editor-container.collapsed .CodeMirror-scroll{
